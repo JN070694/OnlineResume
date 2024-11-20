@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonathan William Nicholson's Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .copy-button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .copy-button:focus {
+            outline: none;
+        }
+        .copy-button:hover {
+            background-color: #45a049;
+        }
+        .content-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #fff;
+        }
+        .job-info, .education-info {
+            margin-bottom: 10px;
+        }
+        .job-info span {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .job-info span:not(:last-child)::after {
+            content: " |";
+            margin-left: 5px;
+        }
+        .links {
+            margin-top: 10px;
+        }
+        .links a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        /* Remove bullet points from skills */
+        #skills ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        /* Add separators between education details */
+        .education-info span {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .education-info span:not(:last-child)::after {
+            content: " |";
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Jonathan William Nicholson</h1>
+    <p>615-498-5851 | jn070694@outlook.com | Antioch, TN</p>
+    
+    <!-- LinkedIn and GitHub links added here -->
+    <div class="links">
+        <p>Connect with me on <a href="https://www.linkedin.com/in/jonathan-w-nicholson/" target="_blank">LinkedIn</a> | Visit my <a href="https://github.com/JN070694" target="_blank">GitHub</a></p>
+    </div>
+
+    <div class="section">
+        <h2>SUMMARY</h2>
+        <div class="content-box" id="summary">
+            <p>Experienced professional with expertise in DSCSA regulations, compliance measures, and technical writing. Proven track record of enhancing productivity through process automation and Lean Six Sigma methodologies.</p>
+            <button class="copy-button" onclick="copyToClipboard('summary')">Copy</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>WORK EXPERIENCE</h2>
+        
+        <!-- Job 1 -->
+        <div class="content-box" id="job1">
+            <div class="job-info">
+                <span class="job-title" id="job1-title">Sr. DSCSA Representative</span>
+                <span class="job-location" id="job1-location">Cardinal Health</span>
+                <span class="job-location" id="job1-location">Remote</span>
+                <span class="job-date" id="job1-date">08/2023 - Current</span>
+                <button class="copy-button" onclick="copyToClipboard('job1-title')">Copy Title</button>
+                <button class="copy-button" onclick="copyEmployer('Cardinal Health')">Copy Employer</button>
+                <button class="copy-button" onclick="copyLocation('Remote')">Copy Location</button>
+                <button class="copy-button" onclick="copyToClipboard('job1-date')">Copy Dates</button>
+            </div>
+            <ul id="job1-responsibilities">
+                <li>Assisted in building DSCSA compliance measures during the 2023 compliance deadline.</li>
+                <li>Served as a subject matter expert on DSCSA regulations and strategies as outlined by the Drug Supply Chain Securities Act as outlined by the FDA.</li>
+                <li>Single-handedly created SOP guides and Excel forms for various business units as requested by both management and executives.</li>
+                <li>Processed specialty and exclusive pharmaceutical orders while ensuring HIPAA compliance.</li>
+            </ul>
+            <button class="copy-button" onclick="copyToClipboard('job1-responsibilities')">Copy Responsibilities</button>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="content-box" id="job2">
+            <div class="job-info">
+                <span class="job-title" id="job2-title">Specialty Contractor w/ Cardinal Health</span>
+                <span class="job-location" id="job2-location">MAGNIT</span>
+                <span class="job-location" id="job2-location">Remote</span>
+                <span class="job-date" id="job2-date">03/2022 - 05/2023</span>
+                <button class="copy-button" onclick="copyToClipboard('job2-title')">Copy Title</button>
+                <button class="copy-button" onclick="copyEmployer('MAGNIT')">Copy Employer</button>
+                <button class="copy-button" onclick="copyLocation('Remote')">Copy Location</button>
+                <button class="copy-button" onclick="copyToClipboard('job2-date')">Copy Dates</button>
+            </div>
+            <ul id="job2-responsibilities">
+                <li>Assisted in FDA mandated Letter of Authorization compliance project of 10,000 accounts after company acquisition.</li>
+                <li>Maintained and processed allocations, change requests, CMIR tables, as well as various billing forms and data; processed specialty & exclusive orders while maintaining federal HIPAA compliance.</li>
+                <li>Operated as a Lean, Six Sigma consultant as requested by management.</li>
+                <li>Wrote SOPs for various business units & departments, including: AMI, billing, dropship, implementations, returns, and transportation.</li>
+                <li>Created Excel forms to automate previously manual tasks, leading to increases in department productivity of up to 400%.</li>
+                <li>Crafted reporting dashboards that were used on the executive level.</li>
+            </ul>
+            <button class="copy-button" onclick="copyToClipboard('job2-responsibilities')">Copy Responsibilities</button>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="content-box" id="job3">
+            <div class="job-info">
+                <span class="job-title" id="job3-title">Police Officer</span>
+                <span class="job-location" id="job3-location">Metro Nashville Police Department</span>
+                <span class="job-location" id="job3-location">Nashville, TN</span>
+                <span class="job-date" id="job3-date">10/2017 - 10/2021</span>
+                <button class="copy-button" onclick="copyToClipboard('job3-title')">Copy Title</button>
+                <button class="copy-button" onclick="copyEmployer('Metro Nashville Police Department')">Copy Employer</button>
+                <button class="copy-button" onclick="copyLocation('Nashville, TN')">Copy Location</button>
+                <button class="copy-button" onclick="copyToClipboard('job3-date')">Copy Dates</button>
+            </div>
+            <ul id="job3-responsibilities">
+                <li>Patrolled assigned geographic zones, responding to calls for service as outlined by local, state, and federal law.</li>
+                <li>Conducted investigations into criminal activities, including interviews, evidence collection, and case documentation.</li>
+                <li>Executed search warrants and participated in raids, ensuring adherence to legal protocols and safety procedures.</li>
+                <li>Apprehended and transported criminal suspects, provided courtroom testimony through self-documented incident reports.</li>
+                <li>Responded to emergency and non-emergency situations, such as criminal vice activities and domestic disturbances.</li>
+            </ul>
+            <button class="copy-button" onclick="copyToClipboard('job3-responsibilities')">Copy Responsibilities</button>
+        </div>
+
+        <p><strong>Additional Work History: Available Upon Request</strong></p>
+    </div>
+
+        <!-- Professional Impact Metrics -->
+        <div class="section">
+            <h2>Professional Impact Metrics</h2>
+            <div class="content-box" id="impact-metrics">
+                <ul>
+                    <li>(2024): Identified and corrected a recurring billing error that had been ongoing for years, resulting in savings of tens of thousands of dollars per quarter.</li>
+                    <li>(2023): Created an automated tracking and reporting log for specialty pharma products that was mandated by a specialty vendor.</li>
+                    <li>(2023): Independently created Cardinal Health's COVID-19 vaccine tracking form and sales dashboard.</li>
+                    <li>(2023): Independently drafted executive-level dashboards used to report to the vice president of Cardinal Health's Specialty Division.</li>
+                    <li>(2023): Automated a bi-weekly specialty charge within Cardinal Health, increasing task processing  time by over 400%.</li>
+                    <li>(2022):  Drafted process maps that oversaw the rectification of 10,000 medical accounts for FDA, HIPAA compliance after competitor acquisition.</li>
+                </ul>
+                <button class="copy-button" onclick="copyToClipboard('impact-metrics')">Copy Professional Impact Metrics</button>
+            </div>
+        </div>
+
+    <div class="section">
+        <h2>SKILLS</h2>
+        <div class="content-box" id="skills">
+            <ul>
+                <li>★★★★★ Excel</li>
+                <li>★★★★★ Microsoft Office products at large</li>
+                <li>★★★★★ SOP Creation & Technical Writing</li>
+                <li>★★★★☆ Customer Relations Management (CRM) Software</li>
+                <li>★★★★☆ Dashboard Creation</li>
+                <li>★★★★☆ Data Analysis</li>
+                <li>★★★★☆ Enterprise Resource Planning (ERP) Software</li>
+                <li>★★★★☆ Process Automation</li>
+                <li>★★★★☆ Process, Continuous Improvement</li>
+                <li>★★★★☆ Tableau</li>
+                <li>★★★☆☆ Local HTML coding & scripts</li>
+                <li>★★☆☆☆ Ethical Hacking</li>
+            </ul>
+            <button class="copy-button" onclick="copyToClipboard('skills')">Copy</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>EDUCATION</h2>
+        
+        <!-- University 1 -->
+        <div class="content-box" id="education">
+            <div class="education-info">
+                <span class="edu-name" id="edu-name">Middle Tennessee State University</span>
+                <span class="edu-location" id="edu-location">Murfreesboro, TN</span>
+                <span class="edu-degree" id="edu-degree">MBA, Healthcare Admin & Business</span>
+                <span class="edu-date" id="edu-date">08/2021 - 05/2023</span>
+                <span class="edu-gpa" id="edu-gpa">4.0 GPA, Summa Cum Laude</span>
+                <button class="copy-button" onclick="copyToClipboard('edu-name')">Copy University</button>
+                <button class="copy-button" onclick="copyLocation('Murfreesboro, TN')">Copy Location</button>
+                <button class="copy-button" onclick="copyToClipboard('edu-degree')">Copy Degree</button>
+                <button class="copy-button" onclick="copyToClipboard('edu-date')">Copy Dates</button>
+                <button class="copy-button" onclick="copyToClipboard('edu-gpa')">Copy GPA</button>
+            </div>
+        </div>
+
+        <!-- University 2 -->
+        <div class="content-box" id="education2">
+            <div class="education-info">
+                <span class="edu-name" id="edu-name2">Middle Tennessee State University</span>
+                <span class="edu-location" id="edu-location2">Murfreesboro, TN</span>
+                <span class="edu-degree" id="edu-degree2">BBA, Economics</span>
+                <span class="edu-date" id="edu-date2">08/2014 - 05/2017</span>
+                <span class="edu-gpa" id="edu-gpa2">3.85 GPA, Magna Cum Laude</span>
+                <button class="copy-button" onclick="copyToClipboard('edu-name2')">Copy University</button>
+                <button class="copy-button" onclick="copyLocation('Murfreesboro, TN')">Copy Location</button>
+                <button class="copy-button" onclick="copyToClipboard('edu-degree2')">Copy Degree</button>
+                <button class="copy-button" onclick="copyToClipboard('edu-date2')">Copy Dates</button>
+                <button class="copy-button" onclick="copyToClipboard('edu-gpa2')">Copy GPA</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(id) {
+            var element = document.getElementById(id);
+            var range = document.createRange();
+            range.selectNode(element);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+        }
+
+        function copyEmployer(employer) {
+            const dummyInput = document.createElement('input');
+            document.body.appendChild(dummyInput);
+            dummyInput.value = employer;
+            dummyInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummyInput);
+        }
+
+        function copyLocation(location) {
+            const dummyInput = document.createElement('input');
+            document.body.appendChild(dummyInput);
+            dummyInput.value = location;
+            dummyInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummyInput);
+        }
+    </script>
+</body>
+</html>
+
