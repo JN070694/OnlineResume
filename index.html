@@ -281,34 +281,47 @@
     </div>
 
     <script>
-        function copyToClipboard(id) {
-            var element = document.getElementById(id);
-            var range = document.createRange();
-            range.selectNode(element);
-            window.getSelection().removeAllRanges();
-            window.getSelection().addRange(range);
-            document.execCommand('copy');
-            window.getSelection().removeAllRanges();
+    function copyToClipboard(id) {
+        var element = document.getElementById(id);
+        
+        // Get the list items (responsibilities) and format them with a bullet and space
+        var listItems = element.getElementsByTagName('li');
+        var formattedText = '';
+        
+        for (var i = 0; i < listItems.length; i++) {
+            formattedText += '• ' + listItems[i].innerText.trim() + '\n'; // Bullet point and space before each line
         }
+        
+        // Create a temporary element to copy the content
+        var tempElement = document.createElement('textarea');
+        tempElement.value = formattedText.trim(); // Add the formatted text with bullets
+        document.body.appendChild(tempElement);
+        
+        // Select the content and copy it
+        tempElement.select();
+        document.execCommand('copy');
+        
+        // Remove the temporary element
+        document.body.removeChild(tempElement);
+    }
 
-        function copyEmployer(employer) {
-            const dummyInput = document.createElement('input');
-            document.body.appendChild(dummyInput);
-            dummyInput.value = employer;
-            dummyInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(dummyInput);
-        }
+    function copyEmployer(employer) {
+        const dummyInput = document.createElement('input');
+        document.body.appendChild(dummyInput);
+        dummyInput.value = employer;
+        dummyInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(dummyInput);
+    }
 
-        function copyLocation(location) {
-            const dummyInput = document.createElement('input');
-            document.body.appendChild(dummyInput);
-            dummyInput.value = location;
-            dummyInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(dummyInput);
-        }
-    </script>
+    function copyLocation(location) {
+        const dummyInput = document.createElement('input');
+        document.body.appendChild(dummyInput);
+        dummyInput.value = location;
+        dummyInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(dummyInput);
+    }
+</script>
 </body>
 </html>
-
