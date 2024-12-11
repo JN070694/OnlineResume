@@ -173,21 +173,21 @@
         <p><strong>Additional Work History: Available Upon Request</strong></p>
     </div>
 
-        <!-- Professional Impact Metrics -->
-        <div class="section">
-            <h2>Professional Impact Metrics</h2>
-            <div class="content-box" id="impact-metrics">
-                <ul>
-                    <li>(2024): Identified and corrected a recurring billing error that had been ongoing for years, resulting in savings of tens of thousands of dollars per quarter.</li>
-                    <li>(2023): Created an automated tracking and reporting log for specialty pharma products that was mandated by a specialty vendor.</li>
-                    <li>(2023): Independently created Cardinal Health's COVID-19 vaccine tracking form and sales dashboard.</li>
-                    <li>(2023): Independently drafted executive-level dashboards used to report to the vice president of Cardinal Health's Specialty Division.</li>
-                    <li>(2023): Automated a bi-weekly specialty charge within Cardinal Health, increasing task processing  time by over 400%.</li>
-                    <li>(2022): Drafted process maps that oversaw the rectification of 10,000 new medical accounts for FDA, HIPAA compliance after competitor acquisition.</li>
-                </ul>
-                <button class="copy-button" onclick="copyToClipboard('impact-metrics')">Copy Professional Impact Metrics</button>
-            </div>
+    <!-- Professional Impact Metrics -->
+    <div class="section">
+        <h2>Professional Impact Metrics</h2>
+        <div class="content-box" id="impact-metrics">
+            <ul>
+                <li>(2024): Identified and corrected a recurring billing error that had been ongoing for years, resulting in savings of tens of thousands of dollars per quarter.</li>
+                <li>(2023): Created an automated tracking and reporting log for specialty pharma products that was mandated by a specialty vendor.</li>
+                <li>(2023): Independently created Cardinal Health's COVID-19 vaccine tracking form and sales dashboard.</li>
+                <li>(2023): Independently drafted executive-level dashboards used to report to the vice president of Cardinal Health's Specialty Division.</li>
+                <li>(2023): Automated a bi-weekly specialty charge within Cardinal Health, increasing task processing time by over 400%.</li>
+                <li>(2022): Drafted process maps that oversaw the rectification of 10,000 new medical accounts for FDA, HIPAA compliance after competitor acquisition.</li>
+            </ul>
+            <button class="copy-button" onclick="copyToClipboard('impact-metrics')">Copy Professional Impact Metrics</button>
         </div>
+    </div>
 
     <div class="section">
         <h2>SKILLS</h2>
@@ -230,54 +230,6 @@
                 <button class="copy-button" onclick="copyToClipboard('edu-gpa')">Copy GPA</button>
             </div>
         </div>
-
-                <!-- University 2 -->
-        <div class="content-box" id="education">
-            <div class="education-info">
-                <span class="edu-name" id="edu-name">Middle Tennessee State University</span>
-                <span class="edu-location" id="edu-location">Murfreesboro, TN</span>
-                <span class="edu-degree" id="edu-degree">MBA, Business Administration</span>
-                <span class="edu-date" id="edu-date">08/2021 - 05/2023</span>
-                <span class="edu-gpa" id="edu-gpa">4.0 GPA, Summa Cum Laude</span>
-                <button class="copy-button" onclick="copyToClipboard('edu-name')">Copy University</button>
-                <button class="copy-button" onclick="copyToClipboard('edu-location')">Copy Location</button>
-                <button class="copy-button" onclick="copyToClipboard('edu-degree')">Copy Degree</button>
-                <button class="copy-button" onclick="copyToClipboard('edu-date')">Copy Dates</button>
-                <button class="copy-button" onclick="copyToClipboard('edu-gpa')">Copy GPA</button>
-            </div>
-        </div>
-        
-        <!-- University 3 -->
-        <div class="content-box" id="education">
-            <div class="education-info">
-                <span class="edu-name" id="edu-name">Middle Tennessee State University</span>
-                <span class="edu-location" id="edu-location">Murfreesboro, TN</span>
-                <span class="edu-degree" id="edu-degree">MBA, Healthcare Management</span>
-                <span class="edu-date" id="edu-date">08/2021 - 05/2023</span>
-                <span class="edu-gpa" id="edu-gpa">4.0 GPA, Summa Cum Laude</span>
-                <button class="copy-button" onclick="copyToClipboard('edu-name')">Copy University</button>
-                <button class="copy-button" onclick="copyToClipboard('edu-location')">Copy Location</button>
-                <button class="copy-button" onclick="copyToClipboard('edu-degree')">Copy Degree</button>
-                <button class="copy-button" onclick="copyToClipboard('edu-date')">Copy Dates</button>
-                <button class="copy-button" onclick="copyToClipboard('edu-gpa')">Copy GPA</button>
-            </div>
-        </div>
-
-        <!-- University 4 -->
-        <div class="content-box" id="education2">
-            <div class="education-info">
-                <span class="edu-name" id="edu-name2">Middle Tennessee State University</span>
-                <span class="edu-location" id="edu-location2">Murfreesboro, TN</span>
-                <span class="edu-degree" id="edu-degree2">BBA, Economics</span>
-                <span class="edu-date" id="edu-date2">08/2014 - 05/2017</span>
-                <span class="edu-gpa" id="edu-gpa2">3.85 GPA, Magna Cum Laude</span>
-                <button class="copy-button" onclick="copyToClipboard('edu-name2')">Copy University</button>
-                <button class="copy-button" onclick="copyToClipboard('edu-location')">Copy Location</button>
-                <button class="copy-button" onclick="copyToClipboard('edu-degree2')">Copy Degree</button>
-                <button class="copy-button" onclick="copyToClipboard('edu-date2')">Copy Dates</button>
-                <button class="copy-button" onclick="copyToClipboard('edu-gpa2')">Copy GPA</button>
-            </div>
-        </div>
     </div>
 
 <script>
@@ -286,33 +238,36 @@
         var element = document.getElementById(id);
         let textToCopy = '';
 
-        // Check if the element is a <ul> (unordered list)
-        if (element.tagName === 'UL') {
-            // Get all <li> elements within the <ul> and format them with bullets
+        // Special handling for "Professional Impact Metrics" section
+        if (id === 'impact-metrics') {
+            // Get all <li> elements within the <ul> and format them with bullet points
             const listItems = element.querySelectorAll('li');
             listItems.forEach(function(item) {
-                textToCopy += '• ' + item.textContent.trim() + '\n';  // Each item on a new line with bullet point
+                textToCopy += '• ' + item.innerText + '\n'; // Add bullet point before each item
             });
+        } else if (id === 'skills') {
+            // Handle skills similarly with bullet points
+            const listItems = element.querySelectorAll('li');
+            listItems.forEach(function(item) {
+                textToCopy += '• ' + item.innerText + '\n';
+            });
+        } else if (id.includes('job')) {
+            // Handling for job responsibilities (including job title, employer, location, and dates)
+            const elementContent = element.innerText;
+            textToCopy = elementContent; // Directly copy the plain text content
         } else {
-            // For non-list elements, treat them as a single line of text
-            textToCopy = element.textContent.trim();
+            // Handle general copy behavior for text-based content
+            textToCopy = element.innerText;
         }
 
-        // Create a temporary textarea element to hold the value for copying
-        const dummyTextarea = document.createElement('textarea');
-        document.body.appendChild(dummyTextarea);
-        
-        // Set the textarea value to the formatted text to copy
-        dummyTextarea.value = textToCopy;
-        
-        // Select the text in the textarea
-        dummyTextarea.select();
+        // Create a temporary textarea to use the document.execCommand() API
+        var tempTextArea = document.createElement('textarea');
+        tempTextArea.value = textToCopy.trim();
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
         document.execCommand('copy');
-        
-        // Clean up the DOM by removing the temporary textarea
-        document.body.removeChild(dummyTextarea);
+        document.body.removeChild(tempTextArea);
     }
 </script>
-
 </body>
 </html>
