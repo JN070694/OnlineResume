@@ -97,7 +97,7 @@
         <h2>SUMMARY</h2>
         <div class="content-box" id="summary">
             <p>Experienced professional with expertise in DSCSA regulations, compliance measures, and technical writing. Proven track record of enhancing productivity through process automation and Lean Six Sigma methodologies.</p>
-            <button class="copy-button" onclick="copyToClipboard('summary')">Copy</button>
+            <button class="copy-button" onclick="copyToClipboard('summary')">Copy Summary</button>
         </div>
     </div>
 
@@ -208,7 +208,7 @@
                 <li>★★★☆☆ Project Libre</li>
                 <li>★★☆☆☆ Ethical Hacking</li>
             </ul>
-            <button class="copy-button" onclick="copyToClipboard('skills')">Copy</button>
+            <button class="copy-button" onclick="copyToClipboard('skills')">Copy Skills</button>
         </div>
     </div>
 
@@ -280,48 +280,39 @@
         </div>
     </div>
 
-    <script>
+<script>
+    // General function to copy content from an element by ID
     function copyToClipboard(id) {
         var element = document.getElementById(id);
-        
-        // Get the list items (responsibilities) and format them with a bullet and space
-        var listItems = element.getElementsByTagName('li');
-        var formattedText = '';
-        
-        for (var i = 0; i < listItems.length; i++) {
-            formattedText += '• ' + listItems[i].innerText.trim() + '\n'; // Bullet point and space before each line
+        let textToCopy = '';
+
+        // Check if the element is a <ul> (unordered list)
+        if (element.tagName === 'UL') {
+            // Get all <li> elements within the <ul> and format them with bullets
+            const listItems = element.querySelectorAll('li');
+            listItems.forEach(function(item) {
+                textToCopy += '• ' + item.textContent.trim() + '\n';  // Each item on a new line with bullet point
+            });
+        } else {
+            // For non-list elements, treat them as a single line of text
+            textToCopy = element.textContent.trim();
         }
-        
-        // Create a temporary element to copy the content
-        var tempElement = document.createElement('textarea');
-        tempElement.value = formattedText.trim(); // Add the formatted text with bullets
-        document.body.appendChild(tempElement);
-        
-        // Select the content and copy it
-        tempElement.select();
-        document.execCommand('copy');
-        
-        // Remove the temporary element
-        document.body.removeChild(tempElement);
-    }
 
-    function copyEmployer(employer) {
-        const dummyInput = document.createElement('input');
-        document.body.appendChild(dummyInput);
-        dummyInput.value = employer;
-        dummyInput.select();
+        // Create a temporary textarea element to hold the value for copying
+        const dummyTextarea = document.createElement('textarea');
+        document.body.appendChild(dummyTextarea);
+        
+        // Set the textarea value to the formatted text to copy
+        dummyTextarea.value = textToCopy;
+        
+        // Select the text in the textarea
+        dummyTextarea.select();
         document.execCommand('copy');
-        document.body.removeChild(dummyInput);
-    }
-
-    function copyLocation(location) {
-        const dummyInput = document.createElement('input');
-        document.body.appendChild(dummyInput);
-        dummyInput.value = location;
-        dummyInput.select();
-        document.execCommand('copy');
-        document.body.removeChild(dummyInput);
+        
+        // Clean up the DOM by removing the temporary textarea
+        document.body.removeChild(dummyTextarea);
     }
 </script>
+
 </body>
 </html>
