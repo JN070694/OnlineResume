@@ -215,19 +215,63 @@
     <div class="section">
         <h2>EDUCATION</h2>
         
-        <!-- University 1 -->
-        <div class="content-box" id="education">
+<!-- University 1 -->
+        <div class="content-box" id="education1">
             <div class="education-info">
-                <span class="edu-name" id="edu-name">Middle Tennessee State University</span>
-                <span class="edu-location" id="edu-location">Murfreesboro, TN</span>
-                <span class="edu-degree" id="edu-degree">MAcc, Accounting</span>
-                <span class="edu-date" id="edu-date">03/2024 - XX/20XX</span>
+                <span class="edu-name" id="edu1-name">Middle Tennessee State University</span>
+                <span class="edu-location" id="edu1-location">Murfreesboro, TN</span>
+                <span class="edu-degree" id="edu1-degree">MAcc, Accounting</span>
+                <span class="edu-date" id="edu1-date">03/2024 - XX/20XX</span>
                 <span class="edu-gpa" id="edu-gpa">X.XX GPA, XXXXX</span>
-                <button class="copy-button" onclick="copyToClipboard('edu-name')">Copy University</button>
-                <button class="copy-button" onclick="copyToClipboard('edu-location')">Copy Location</button>
-                <button class="copy-button" onclick="copyToClipboard('edu-degree')">Copy Degree</button>
-                <button class="copy-button" onclick="copyToClipboard('edu-date')">Copy Dates</button>
-                <button class="copy-button" onclick="copyToClipboard('edu-gpa')">Copy GPA</button>
+                <button class="copy-button" onclick="copyToClipboard('edu1-name')">Copy University</button>
+                <button class="copy-button" onclick="copyToClipboard('edu1-location')">Copy Location</button>
+                <button class="copy-button" onclick="copyToClipboard('edu1-degree')">Copy Degree</button>
+                <button class="copy-button" onclick="copyToClipboard('edu1-date')">Copy Dates</button>
+            </div>
+        </div>
+
+                <!-- University 2 -->
+        <div class="content-box" id="education2">
+            <div class="education-info">
+                <span class="edu-name" id="edu2-name">Middle Tennessee State University</span>
+                <span class="edu-location" id="edu2-location">Murfreesboro, TN</span>
+                <span class="edu-degree" id="edu2-degree">MBA, Business Administration</span>
+                <span class="edu-date" id="edu2-date">08/2021 - 05/2023</span>
+                <span class="edu-gpa" id="edu2-gpa">4.0 GPA, Summa Cum Laude</span>
+                <button class="copy-button" onclick="copyToClipboard('edu2-name')">Copy University</button>
+                <button class="copy-button" onclick="copyToClipboard('edu2-location')">Copy Location</button>
+                <button class="copy-button" onclick="copyToClipboard('edu2-degree')">Copy Degree</button>
+                <button class="copy-button" onclick="copyToClipboard('edu2-date')">Copy Dates</button>
+            </div>
+        </div>
+        
+        <!-- University 3 -->
+        <div class="content-box" id="education3">
+            <div class="education-info">
+                <span class="edu-name" id="edu3-name">Middle Tennessee State University</span>
+                <span class="edu-location" id="edu3-location">Murfreesboro, TN</span>
+                <span class="edu-degree" id="edu3-degree">MBA, Healthcare Management</span>
+                <span class="edu-date" id="edu3-date">08/2021 - 05/2023</span>
+                <span class="edu-gpa" id="edu-gpa">4.0 GPA, Summa Cum Laude</span>
+                <button class="copy-button" onclick="copyToClipboard('edu3-name')">Copy University</button>
+                <button class="copy-button" onclick="copyToClipboard('edu3-location')">Copy Location</button>
+                <button class="copy-button" onclick="copyToClipboard('edu3-degree')">Copy Degree</button>
+                <button class="copy-button" onclick="copyToClipboard('edu3-date')">Copy Dates</button>
+            </div>
+        </div>
+
+        <!-- University 4 -->
+        <div class="content-box" id="education4">
+            <div class="education-info">
+                <span class="edu-name" id="edu4-name">Middle Tennessee State University</span>
+                <span class="edu-location" id="edu4-location">Murfreesboro, TN</span>
+                <span class="edu-degree" id="edu4-degree">BBA, Economics</span>
+                <span class="edu-date" id="edu4-date">08/2014 - 05/2017</span>
+                <span class="edu-gpa" id="edu4-gpa2">3.85 GPA, Magna Cum Laude</span>
+                <button class="copy-button" onclick="copyToClipboard('edu4-name')">Copy University</button>
+                <button class="copy-button" onclick="copyToClipboard('edu4-location')">Copy Location</button>
+                <button class="copy-button" onclick="copyToClipboard('edu4-degree')">Copy Degree</button>
+                <button class="copy-button" onclick="copyToClipboard('edu4-date')">Copy Dates</button>
             </div>
         </div>
     </div>
@@ -238,25 +282,39 @@
         var element = document.getElementById(id);
         let textToCopy = '';
 
-        // Special handling for "Professional Impact Metrics" section
-        if (id === 'impact-metrics') {
-            // Get all <li> elements within the <ul> and format them with bullet points
+        // Special handling for the "Summary" section
+        if (id === 'summary') {
+            // Get the text content inside the #summary element (excluding the button)
+            textToCopy = element.querySelector('p').innerText;
+        } else if (id === 'impact-metrics') {
+            // Handle Professional Impact Metrics section with bullet points
             const listItems = element.querySelectorAll('li');
             listItems.forEach(function(item) {
                 textToCopy += '• ' + item.innerText + '\n'; // Add bullet point before each item
             });
         } else if (id === 'skills') {
-            // Handle skills similarly with bullet points
+            // Handle skills with bullet points
             const listItems = element.querySelectorAll('li');
             listItems.forEach(function(item) {
                 textToCopy += '• ' + item.innerText + '\n';
             });
-        } else if (id.includes('job')) {
-            // Handling for job responsibilities (including job title, employer, location, and dates)
-            const elementContent = element.innerText;
-            textToCopy = elementContent; // Directly copy the plain text content
+        } else if (id === 'job1-title' || id === 'job1-employer' || id === 'job1-location' || id === 'job1-dates') {
+            // Handle specific job 1 data copy (title, employer, location, or dates)
+            textToCopy = element.innerText;
+        } else if (id === 'job2-title' || id === 'job2-employer' || id === 'job2-location' || id === 'job2-dates') {
+            // Handle specific job 2 data copy (title, employer, location, or dates)
+            textToCopy = element.innerText;
+        } else if (id === 'job3-title' || id === 'job3-employer' || id === 'job3-location' || id === 'job3-dates') {
+            // Handle specific job 3 data copy (title, employer, location, or dates)
+            textToCopy = element.innerText;
+        } else if (id === 'job1-responsibilities' || id === 'job2-responsibilities' || id === 'job3-responsibilities') {
+            // Special handling for the "Job Responsibilities" section (bullet points for each line)
+            const listItems = element.querySelectorAll('li');
+            listItems.forEach(function(item) {
+                textToCopy += '• ' + item.innerText + '\n'; // Add bullet point before each responsibility
+            });
         } else {
-            // Handle general copy behavior for text-based content
+            // Handle general copy behavior for other sections
             textToCopy = element.innerText;
         }
 
