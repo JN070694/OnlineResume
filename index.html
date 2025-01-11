@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonathan William Nicholson's Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        /* Styling for indent levels */
+        .indent-1 {
+            margin-left: 50px;
+        }
+        .indent-2 {
+            margin-left: 100px;
+        }
+        .indent-3 {
+            margin-left: 150px;
+        }
+        .copy-button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .copy-button:focus {
+            outline: none;
+        }
+        .copy-button:hover {
+            background-color: #45a049;
+        }
+        .content-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #fff;
+        }
+        .job-info, .education-info {
+            margin-bottom: 10px;
+        }
+        .job-info span {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .job-info span:not(:last-child)::after {
+            content: " |";
+            margin-left: 5px;
+        }
+        .links {
+            margin-top: 10px;
+        }
+        .links a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        /* Remove bullet points from skills */
+        #skills ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        /* Add separators between education details */
+        .education-info span {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .education-info span:not(:last-child)::after {
+            content: " |";
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Jonathan William Nicholson</h1>
+    <p>615-498-5851 | <a href="mailto:jn070694@outlook.com">jn070694@outlook.com</a> | Antioch, TN</p>
+    
+    <!-- LinkedIn and GitHub links added here -->
+    <div class="links">
+        <p>Connect with me on <a href="https://www.linkedin.com/in/jonathan-w-nicholson/" target="_blank">LinkedIn</a> | Visit my <a href="https://github.com/JN070694" target="_blank">GitHub</a></p>
+    </div>
+
+    <div class="section">
+        <h2>Summary:</h2>
+        <div class="content-box" id="summary">
+            <p>Experienced professional with expertise in DSCSA regulations, compliance measures, and technical writing. Proven track record of enhancing productivity through process automation and Lean Six Sigma methodologies.</p>
+            <button class="copy-button" onclick="copyToClipboard('summary')">Copy Summary</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Work Experience:</h2>
+        
+        <!-- Job 1 -->
+        <div class="content-box" id="job1">
+            <div class="job-info">
+                <span class="job-title" id="job1-title">Sr. DSCSA Representative</span>
+                <span class="job-employer" id="job1-employer">Cardinal Health</span>
+                <span class="job-location" id="job1-location">La Vergne, TN</span>
+                <span class="job-dates" id="job1-dates">08/2023 - 12/2024</span>
+                <button class="copy-button" onclick="copyToClipboard('job1-title')">Copy Title</button>
+                <button class="copy-button" onclick="copyToClipboard('job1-employer')">Copy Employer</button>
+                <button class="copy-button" onclick="copyToClipboard('job1-location')">Copy Location</button>
+                <button class="copy-button" onclick="copyDatePart('job1-dates', 1)">Copy Date 1</button>
+                <button class="copy-button" onclick="copyDatePart('job1-dates', 2)">Copy Date 2</button>
+            </div>
+            <ul id="job1-responsibilities">
+                <li>Assisted in building DSCSA compliance measures during the 2023 compliance deadline as outlined by the Drug Supply Chain Securities Act.</li>
+                <li>Served as a subject matter expert on DSCSA regulations and strategies.</li>
+                <li>Single-handedly created SOP guides and Excel forms for various business units as requested by both management and executives.</li>
+                <li>Processed specialty and exclusive pharmaceutical orders while ensuring HIPAA compliance.</li>
+            </ul>
+            <button class="copy-button" onclick="copyToClipboard('job1-responsibilities')">Copy Responsibilities</button>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="content-box" id="job2">
+            <div class="job-info">
+                <span class="job-title" id="job2-title">Specialty Contractor w/ Cardinal Health</span>
+                <span class="job-location" id="job2-employer">MAGNIT</span>
+                <span class="job-location" id="job2-location">La Vergne, TN</span>
+                <span class="job-dates" id="job2-dates">03/2022 - 05/2023</span>
+                <button class="copy-button" onclick="copyToClipboard('job2-title')">Copy Title</button>
+                <button class="copy-button" onclick="copyToClipboard('job2-employer')">Copy Employer</button>
+                <button class="copy-button" onclick="copyToClipboard('job2-location')">Copy Location</button>
+                <button class="copy-button" onclick="copyDatePart('job2-dates', 1)">Copy Date 1</button>
+                <button class="copy-button" onclick="copyDatePart('job2-dates', 2)">Copy Date 2</button>
+            </div>
+            <ul id="job2-responsibilities">
+                <li>Assisted in FDA mandated Letter of Authorization compliance project of 10,000 accounts after company acquisition.</li>
+                <li>Maintained and processed allocations, change requests, CMIR tables, as well as various billing forms and data; processed specialty & exclusive orders while maintaining federal HIPAA compliance.</li>
+                <li>Operated as a Lean, Six Sigma consultant as requested by management.</li>
+                <li>Created Excel forms to automate previously manual tasks, leading to increases in department productivity of up to 400%.</li>
+                <li>Wrote SOPs for various business units & departments, including: AMI, billing, dropship, implementations, returns, and transportation.</li>
+                <li>Developed team reporting dashboards for executive-level use, as directed by management.</li>
+            </ul>
+            <button class="copy-button" onclick="copyToClipboard('job2-responsibilities')">Copy Responsibilities</button>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="content-box" id="job3">
+            <div class="job-info">
+                <span class="job-title" id="job3-title">Police Officer</span>
+                <span class="job-location" id="job3-employer">Metro Nashville Police Department</span>
+                <span class="job-location" id="job3-location">Nashville, TN</span>
+                <span class="job-dates" id="job3-dates">10/2017 - 01/2021</span>
+                <button class="copy-button" onclick="copyToClipboard('job3-title')">Copy Title</button>
+                <button class="copy-button" onclick="copyToClipboard('job3-employer')">Copy Employer</button>
+                <button class="copy-button" onclick="copyToClipboard('job3-location')">Copy Location</button>
+                <button class="copy-button" onclick="copyDatePart('job3-dates', 1)">Copy Date 1</button>
+                <button class="copy-button" onclick="copyDatePart('job3-dates', 2)">Copy Date 2</button>
+            </div>
+            <ul id="job3-responsibilities">
+                <li>Patrolled assigned geographic zones, responding to calls for service as outlined by local, state, and federal law.</li>
+                <li>Responded to emergency and non-emergency situations, such as criminal vice activities and domestic disturbances.</li>
+                <li>Conducted investigations into criminal activities, including interviews, evidence collection, and case documentation.</li>
+                <li>Executed search warrants and participated in raids, ensuring adherence to legal protocols and safety procedures.</li>
+                <li>Apprehended and transported criminal suspects, provided courtroom testimony through self-documented incident reports.</li>
+            </ul>
+            <button class="copy-button" onclick="copyToClipboard('job3-responsibilities')">Copy Responsibilities</button>
+        </div>
+
+        <p><strong>Additional Work History: Available Upon Request</strong></p>
+    </div>
+
+    <!-- Professional Impact Metrics -->
+    <div class="section">
+        <h2>Professional Impact Metrics:</h2>
+        <div class="content-box" id="impact-metrics">
+            <ul>
+                <li>(2024): Identified and corrected a recurring billing error that had been ongoing for years, resulting in savings of tens of thousands of dollars per quarter.</li>
+                <li>(2023): Created an automated tracking and reporting log for specialty pharma products that was mandated by a specialty vendor.</li>
+                <li>(2023): Independently created Cardinal Health's COVID-19 vaccine tracking form and sales dashboard.</li>
+                <li>(2023): Independently drafted executive-level dashboards used to report to the vice president of Cardinal Health's Specialty Division.</li>
+                <li>(2023): Automated a bi-weekly specialty charge within Cardinal Health, increasing task processing time by over 400%.</li>
+                <li>(2022): Drafted process maps that oversaw the rectification of 10,000 new medical accounts for FDA, HIPAA compliance after competitor acquisition.</li>
+            </ul>
+            <button class="copy-button" onclick="copyToClipboard('impact-metrics')">Copy Professional Impact Metrics</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Skills:</h2>
+        <div class="content-box" id="skills">
+            <ul>
+                <li>★★★★★ Excel</li>
+                <li>★★★★★ Lucidchart</li>
+                <li>★★★★★ Microsoft Office 365</li>
+                <li>★★★★★ SOP Creation & Technical Writing</li>
+                <li>★★★★☆ Customer Relations Management (CRM) Software, "Salesforce"</li>
+                <li>★★★★☆ Dashboard Creation</li>
+                <li>★★★★☆ Data Analysis</li>
+                <li>★★★★☆ Enterprise Resource Planning (ERP) Software, "SAP"</li>
+                <li>★★★★☆ Process Automation</li>
+                <li>★★★★☆ Process, Continuous Improvement</li>
+                <li>★★★★☆ Tableau</li>
+                <li>★★★☆☆ Local HTML coding & scripts</li>
+                <li>★★★☆☆ Project Libre</li>
+                <li>★★☆☆☆ Ethical Hacking</li>
+            </ul>
+            <button class="copy-button" onclick="copyToClipboard('skills')">Copy Skills</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Education:</h2>
+        
+<!-- University 1 -->
+        <div class="content-box" id="education1">
+            <div class="education-info">
+                <span class="edu-name" id="edu1-name">Middle Tennessee State University</span>
+                <span class="edu-location" id="edu1-location">Murfreesboro, TN</span>
+                <span class="edu-degree" id="edu1-degree">MAcc, Accounting</span>
+                <span class="edu-dates" id="edu1-dates">01/2025 - XX/2026</span>
+                <span class="edu-gpa" id="edu1-gpa">X.XX GPA, XXXXX</span>
+                <button class="copy-button" onclick="copyToClipboard('edu1-name')">Copy University</button>
+                <button class="copy-button" onclick="copyToClipboard('edu1-location')">Copy Location</button>
+                <button class="copy-button" onclick="copyToClipboard('edu1-degree')">Copy Degree</button>
+                <button class="copy-button" onclick="copyDatePart('edu1-dates', 1)">Copy Date 1</button>
+                <button class="copy-button" onclick="copyDatePart('edu1-dates', 2)">Copy Date 2</button>
+                <button class="copy-button" onclick="copyToClipboard('edu1-gpa')">Copy GPA</button>
+            </div>
+        </div>
+
+                <!-- University 2 -->
+        <div class="content-box" id="education2">
+            <div class="education-info">
+                <span class="edu-name" id="edu2-name">Middle Tennessee State University</span>
+                <span class="edu-location" id="edu2-location">Murfreesboro, TN</span>
+                <span class="edu-degree" id="edu2-degree">MBA, Business Administration</span>
+                <span class="edu-dates" id="edu2-dates">08/2021 - 05/2023</span>
+                <span class="edu-gpa" id="edu2-gpa">4.0 GPA, Summa Cum Laude</span>
+                <button class="copy-button" onclick="copyToClipboard('edu2-name')">Copy University</button>
+                <button class="copy-button" onclick="copyToClipboard('edu2-location')">Copy Location</button>
+                <button class="copy-button" onclick="copyToClipboard('edu2-degree')">Copy Degree</button>
+                <button class="copy-button" onclick="copyDatePart('edu2-dates', 1)">Copy Date 1</button>
+                <button class="copy-button" onclick="copyDatePart('edu2-dates', 2)">Copy Date 2</button>
+                <button class="copy-button" onclick="copyToClipboard('edu2-gpa')">Copy GPA</button>
+            </div>
+        </div>
+        
+        <!-- University 3 -->
+        <div class="content-box" id="education3">
+            <div class="education-info">
+                <span class="edu-name" id="edu3-name">Middle Tennessee State University</span>
+                <span class="edu-location" id="edu3-location">Murfreesboro, TN</span>
+                <span class="edu-degree" id="edu3-degree">MBA, Healthcare Management</span>
+                <span class="edu-dates" id="edu3-dates">08/2021 - 05/2023</span>
+                <span class="edu-gpa" id="edu-gpa">4.0 GPA, Summa Cum Laude</span>
+                <button class="copy-button" onclick="copyToClipboard('edu3-name')">Copy University</button>
+                <button class="copy-button" onclick="copyToClipboard('edu3-location')">Copy Location</button>
+                <button class="copy-button" onclick="copyToClipboard('edu3-degree')">Copy Degree</button>
+                <button class="copy-button" onclick="copyDatePart('edu3-dates', 1)">Copy Date 1</button>
+                <button class="copy-button" onclick="copyDatePart('edu3-dates', 2)">Copy Date 2</button>
+                <button class="copy-button" onclick="copyToClipboard('edu3-gpa')">Copy GPA</button>
+            </div>
+        </div>
+
+        <!-- University 4 -->
+        <div class="content-box" id="education4">
+            <div class="education-info">
+                <span class="edu-name" id="edu4-name">Middle Tennessee State University</span>
+                <span class="edu-location" id="edu4-location">Murfreesboro, TN</span>
+                <span class="edu-degree" id="edu4-degree">BBA, Economics</span>
+                <span class="edu-dates" id="edu4-dates">08/2014 - 05/2017</span>
+                <span class="edu-gpa" id="edu4-gpa">3.85 GPA, Magna Cum Laude</span>
+                <button class="copy-button" onclick="copyToClipboard('edu4-name')">Copy University</button>
+                <button class="copy-button" onclick="copyToClipboard('edu4-location')">Copy Location</button>
+                <button class="copy-button" onclick="copyToClipboard('edu4-degree')">Copy Degree</button>
+                <button class="copy-button" onclick="copyDatePart('edu4-dates', 1)">Copy Date 1</button>
+                <button class="copy-button" onclick="copyDatePart('edu4-dates', 2)">Copy Date 2</button>
+                <button class="copy-button" onclick="copyToClipboard('edu4-gpa')">Copy GPA</button>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // General function to copy content from an element by ID
+    function copyToClipboard(id) {
+        var element = document.getElementById(id);
+        let textToCopy = '';
+
+        // Special handling for the "Summary" section
+        if (id === 'summary') {
+            // Get the text content inside the #summary element (excluding the button)
+            textToCopy = element.querySelector('p').innerText;
+        } else if (id === 'impact-metrics') {
+            // Handle Professional Impact Metrics section with bullet points
+            const listItems = element.querySelectorAll('li');
+            listItems.forEach(function(item) {
+                textToCopy += '• ' + item.innerText + '\n'; // Add bullet point before each item
+            });
+        } else if (id === 'skills') {
+            // Handle skills with bullet points
+            const listItems = element.querySelectorAll('li');
+            listItems.forEach(function(item) {
+                textToCopy += '• ' + item.innerText + '\n';
+            });
+        } else if (id === 'job1-title' || id === 'job1-employer' || id === 'job1-location' || id === 'job1-dates') {
+            // Handle specific job 1 data copy (title, employer, location, or dates)
+            textToCopy = element.innerText;
+        } else if (id === 'job2-title' || id === 'job2-employer' || id === 'job2-location' || id === 'job2-dates') {
+            // Handle specific job 2 data copy (title, employer, location, or dates)
+            textToCopy = element.innerText;
+        } else if (id === 'job3-title' || id === 'job3-employer' || id === 'job3-location' || id === 'job3-dates') {
+            // Handle specific job 3 data copy (title, employer, location, or dates)
+            textToCopy = element.innerText;
+        } else if (id === 'job1-responsibilities' || id === 'job2-responsibilities' || id === 'job3-responsibilities') {
+            // Special handling for the "Job Responsibilities" section (bullet points for each line)
+            const listItems = element.querySelectorAll('li');
+            listItems.forEach(function(item) {
+                textToCopy += '• ' + item.innerText + '\n'; // Add bullet point before each responsibility
+            });
+        } else {
+            // Handle general copy behavior for other sections
+            textToCopy = element.innerText;
+        }
+
+        // Create a temporary textarea to use the document.execCommand() API
+        var tempTextArea = document.createElement('textarea');
+        tempTextArea.value = textToCopy.trim();
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextArea);
+    }
+
+    // Function to copy the date before or after the hyphen
+    function copyDatePart(id, part) {
+        var element = document.getElementById(id);
+        var dateText = element.innerText.trim();
+
+        // Split the date string by the hyphen
+        var dates = dateText.split(' - ');
+
+        // Check which part of the date to copy (1 for before hyphen, 2 for after)
+        var textToCopy = part === 1 ? dates[0] : dates[1];
+
+        // Create a temporary textarea to use the document.execCommand() API
+        var tempTextArea = document.createElement('textarea');
+        tempTextArea.value = textToCopy.trim();
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextArea);
+    }
+</script>
+</body>
+</html>
