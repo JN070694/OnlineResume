@@ -298,6 +298,14 @@
             <li><a href="Nicholson_Transcripts_2025.pdf" target="_blank">Open Transcripts</a></li>
         </ul>
     </div>
+
+    <!-- Other Section -->
+    <div class="Other">
+        <h2>Other:</h2>
+        <ul>
+            <a href="#" id="copyWebsiteLink" data-link="https://www.linkedin.com/in/jonathan-w-nicholson/">Copy LinkedIn URL</a>
+        </ul>
+    </div>
     
 <script>
     // General function to copy content from an element by ID
@@ -369,6 +377,22 @@
         document.execCommand('copy');
         document.body.removeChild(tempTextArea);
     }
+
+    // Add the functionality for copying the LinkedIn URL
+    document.getElementById('copyWebsiteLink').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the link from navigating
+        
+        // Get the URL from the data-link attribute
+        const linkedInUrl = this.getAttribute('data-link');
+        
+        // Create a temporary textarea to use the document.execCommand() API
+        var tempTextArea = document.createElement('textarea');
+        tempTextArea.value = linkedInUrl.trim();
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextArea);
+    });
 </script>
 </body>
 </html>
