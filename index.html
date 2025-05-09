@@ -16,16 +16,6 @@
         .section {
             margin-bottom: 20px;
         }
-        /* Styling for indent levels */
-        .indent-1 {
-            margin-left: 50px;
-        }
-        .indent-2 {
-            margin-left: 100px;
-        }
-        .indent-3 {
-            margin-left: 150px;
-        }
         .copy-button {
             margin-left: 10px;
             padding: 5px 10px;
@@ -35,10 +25,13 @@
             cursor: pointer;
         }
         .copy-button:focus {
-            outline: none;
+            outline: 2px solid #45a049;
         }
         .copy-button:hover {
             background-color: #45a049;
+        }
+        .copy-button.copied {
+            background-color: #2196F3;
         }
         .content-box {
             border: 1px solid #ddd;
@@ -66,18 +59,15 @@
         .links a:hover {
             text-decoration: underline;
         }
-        /* Remove bullet points from skills */
         #skills ul {
             list-style-type: none;
             padding-left: 0;
         }
-        /* Add separators between education details */
         .education-info span {
             display: inline-block;
             margin-right: 10px;
         }
-
-        .education-info span:not(:last-child)::after {
+        .education-info span:not(: soprano) {
             content: " |";
             margin-left: 5px;
         }
@@ -86,7 +76,7 @@
             padding-top: 0;
         }
         #summary, #impact-metrics, #skills {
-        margin-top: 0;
+            margin-top: 0;
         }
     </style>
 </head>
@@ -95,7 +85,6 @@
     <h1>Jonathan William Nicholson</h1>
     <p>615-498-5851 | <a href="mailto:jn070694@outlook.com">jn070694@outlook.com</a> | Antioch, TN</p>
     
-    <!-- LinkedIn and GitHub links added here -->
     <div class="links">
         <p>Connect with Me on <a href="https://www.linkedin.com/in/jonathan-w-nicholson/" target="_blank">LinkedIn</a> | Visit My <a href="https://github.com/JN070694" target="_blank">GitHub</a> | View My <a href="Nicholson_Transcripts_2025.pdf" target="_blank">Transcripts</a></p>
     </div>
@@ -104,25 +93,24 @@
         <h2>Summary:</h2>
         <div class="content-box" id="summary">
             <p>A distinguished Summa Cum Laude graduate with dual MBAs in Business Administration and Healthcare Management, currently honing advanced accounting skills through a Master of Accountancy program, Jonathan Nicholson is a dynamic and results-driven professional with a strong background in regulation, compliance, process improvement, and technical writing. Having prior experience directing teams, training staff, and developing strategic initiatives to align with organizational goals, Jonathan delivers innovative solutions, drives operational excellence, and fosters collaboration to achieve measurable success across diverse business units. As a skilled Lean Six Sigma consultant, he combines professional and academic experience in process automation, project management, and data analysis, leveraging his expertise in creating automated tools, SOP guides, and executive dashboards to achieve efficiency, having reached KPI metric improvements of up to 400% on a single project.  His ability to identify and resolve complex discrepancies that others often overlook results in substantial cost savings, streamlined workflows, and innovative solutions across diverse business units. These contributions not only enhance operational efficiency but also improve customer access to goods and elevate standards of living. Jonathan's technical proficiency spans advanced tools such as Excel, Lucidchart, Tableau, CRM platforms like Salesforce, and ERP systems, including SAP.</p>
-            <button class="copy-button" onclick="copyToClipboard('summary')">Copy Summary</button>
+            <button class="copy-button" onclick="copyToClipboard('summary', this)" aria-label="Copy Summary">Copy Summary</button>
         </div>
     </div>
 
     <div class="section">
         <h2>Work Experience:</h2>
 
-        <!-- Job 4 -->
         <div class="content-box" id="job4">
             <div class="job-info">
                 <span class="job-title" id="job4-title">Teaching Assistant, (Accounting)</span>
                 <span class="job-employer" id="job4-employer">Middle Tennessee State University</span>
                 <span class="job-location" id="job4-location">Murfreesboro, TN</span>
                 <span class="job-dates" id="job4-dates">02/2025 - Present</span>
-                <button class="copy-button" onclick="copyToClipboard('job4-title')">Copy Title</button>
-                <button class="copy-button" onclick="copyToClipboard('job4-employer')">Copy Employer</button>
-                <button class="copy-button" onclick="copyToClipboard('job4-location')">Copy Location</button>
-                <button class="copy-button" onclick="copyDatePart('job4-dates', 1)">Copy Date 1</button>
-                <button class="copy-button" onclick="copyDatePart('job4-dates', 2)">Copy Date 2</button>
+                <button class="copy-button" onclick="copyToClipboard('job4-title', this)" aria-label="Copy Job Title">Copy Title</button>
+                <button class="copy-button" onclick="copyToClipboard('job4-employer', this)" aria-label="Copy Employer">Copy Employer</button>
+                <button class="copy-button" onclick="copyToClipboard('job4-location', this)" aria-label="Copy Location">Copy Location</button>
+                <button class="copy-button" onclick="copyDatePart('job4-dates', 1, this)" aria-label="Copy Start Date">Copy Date 1</button>
+                <button class="copy-button" onclick="copyDatePart('job4-dates', 2, this)" aria-label="Copy End Date">Copy Date 2</button>
             </div>
             <ul id="job4-responsibilities">
                 <li>Summarized research findings for academic projects.</li>
@@ -131,21 +119,20 @@
                 <li>Prepared financial reports, projections, and reconciliations.</li>
                 <li>Assisted faculty with grading, research, and preparing teaching materials.</li>
             </ul>
-            <button class="copy-button" onclick="copyToClipboard('job4-responsibilities')">Copy Responsibilities</button>
+            <button class="copy-button" onclick="copyToClipboard('job4-responsibilities', this)" aria-label="Copy Responsibilities">Copy Responsibilities</button>
         </div>
         
-        <!-- Job 3 -->
         <div class="content-box" id="job3">
             <div class="job-info">
                 <span class="job-title" id="job3-title">Sr. DSCSA Consultant</span>
                 <span class="job-employer" id="job3-employer">Cardinal Health</span>
                 <span class="job-location" id="job3-location">La Vergne, TN</span>
                 <span class="job-dates" id="job3-dates">08/2023 - 12/2024</span>
-                <button class="copy-button" onclick="copyToClipboard('job3-title')">Copy Title</button>
-                <button class="copy-button" onclick="copyToClipboard('job3-employer')">Copy Employer</button>
-                <button class="copy-button" onclick="copyToClipboard('job3-location')">Copy Location</button>
-                <button class="copy-button" onclick="copyDatePart('job3-dates', 1)">Copy Date 1</button>
-                <button class="copy-button" onclick="copyDatePart('job3-dates', 2)">Copy Date 2</button>
+                <button class="copy-button" onclick="copyToClipboard('job3-title', this)" aria-label="Copy Job Title">Copy Title</button>
+                <button class="copy-button" onclick="copyToClipboard('job3-employer', this)" aria-label="Copy Employer">Copy Employer</button>
+                <button class="copy-button" onclick="copyToClipboard('job3-location', this)" aria-label="Copy Location">Copy Location</button>
+                <button class="copy-button" onclick="copyDatePart('job3-dates', 1, this)" aria-label="Copy Start Date">Copy Date 1</button>
+                <button class="copy-button" onclick="copyDatePart('job3-dates', 2, this)" aria-label="Copy End Date">Copy Date 2</button>
             </div>
             <ul id="job3-responsibilities">
                 <li>Assisted in developing and implementing the 2023 pharmaceutical DSCSA compliance measures, as outlined by the Federal Drug Administration.</li>
@@ -154,21 +141,20 @@
                 <li>Independently developed 10+ comprehensive SOP guides and custom Excel forms, as requested, for multiple business units.</li>
                 <li>Processed specialty and exclusive pharmaceutical orders while ensuring HIPAA compliance.</li>
             </ul>
-            <button class="copy-button" onclick="copyToClipboard('job3-responsibilities')">Copy Responsibilities</button>
+            <button class="copy-button" onclick="copyToClipboard('job3-responsibilities', this)" aria-label="Copy Responsibilities">Copy Responsibilities</button>
         </div>
 
-        <!-- Job 2 -->
         <div class="content-box" id="job2">
             <div class="job-info">
                 <span class="job-title" id="job2-title">Specialty Implementations Contractor</span>
-                <span class="job-location" id="job2-employer">Cardinal Health ← Magnit</span>
+                <span class="job-employer" id="job2-employer">Cardinal Health ← Magnit</span>
                 <span class="job-location" id="job2-location">La Vergne, TN</span>
                 <span class="job-dates" id="job2-dates">03/2022 - 05/2023</span>
-                <button class="copy-button" onclick="copyToClipboard('job2-title')">Copy Title</button>
-                <button class="copy-button" onclick="copyToClipboard('job2-employer')">Copy Employer</button>
-                <button class="copy-button" onclick="copyToClipboard('job2-location')">Copy Location</button>
-                <button class="copy-button" onclick="copyDatePart('job2-dates', 1)">Copy Date 1</button>
-                <button class="copy-button" onclick="copyDatePart('job2-dates', 2)">Copy Date 2</button>
+                <button class="copy-button" onclick="copyToClipboard('job2-title', this)" aria-label="Copy Job Title">Copy Title</button>
+                <button class="copy-button" onclick="copyToClipboard('job2-employer', this)" aria-label="Copy Employer">Copy Employer</button>
+                <button class="copy-button" onclick="copyToClipboard('job2-location', this)" aria-label="Copy Location">Copy Location</button>
+                <button class="copy-button" onclick="copyDatePart('job2-dates', 1, this)" aria-label="Copy Start Date">Copy Date 1</button>
+                <button class="copy-button" onclick="copyDatePart('job2-dates', 2, this)" aria-label="Copy End Date">Copy Date 2</button>
             </div>
             <ul id="job2-responsibilities">
                 <li>Supervised a team of seven in an FDA-mandated Letter of Authorization compliance project involving 10,000 accounts following an acquisition.</li>
@@ -178,21 +164,20 @@
                 <li>Wrote SOPs for various business units & departments, including: AMI, billing, dropship, implementations, returns, and transportation.</li>
                 <li>Developed team reporting dashboards for executive-level use, as directed by management.</li>
             </ul>
-            <button class="copy-button" onclick="copyToClipboard('job2-responsibilities')">Copy Responsibilities</button>
+            <button class="copy-button" onclick="copyToClipboard('job2-responsibilities', this)" aria-label="Copy Responsibilities">Copy Responsibilities</button>
         </div>
 
-        <!-- Job 1 -->
         <div class="content-box" id="job1">
             <div class="job-info">
                 <span class="job-title" id="job1-title">Police Officer</span>
-                <span class="job-location" id="job1-employer">Metro Nashville Police Department</span>
+                <span class="job-employer" id="job1-employer">Metro Nashville Police Department</span>
                 <span class="job-location" id="job1-location">Nashville, TN</span>
                 <span class="job-dates" id="job1-dates">10/2017 - 01/2021</span>
-                <button class="copy-button" onclick="copyToClipboard('job1-title')">Copy Title</button>
-                <button class="copy-button" onclick="copyToClipboard('job1-employer')">Copy Employer</button>
-                <button class="copy-button" onclick="copyToClipboard('job1-location')">Copy Location</button>
-                <button class="copy-button" onclick="copyDatePart('job1-dates', 1)">Copy Date 1</button>
-                <button class="copy-button" onclick="copyDatePart('job1-dates', 2)">Copy Date 2</button>
+                <button class="copy-button" onclick="copyToClipboard('job1-title', this)" aria-label="Copy Job Title">Copy Title</button>
+                <button class="copy-button" onclick="copyToClipboard('job1-employer', this)" aria-label="Copy Employer">Copy Employer</button>
+                <button class="copy-button" onclick="copyToClipboard('job1-location', this)" aria-label="Copy Location">Copy Location</button>
+                <button class="copy-button" onclick="copyDatePart('job1-dates', 1, this)" aria-label="Copy Start Date">Copy Date 1</button>
+                <button class="copy-button" onclick="copyDatePart('job1-dates', 2, this)" aria-label="Copy End Date">Copy Date 2</button>
             </div>
             <ul id="job1-responsibilities">
                 <li>Patrolled assigned geographic zones, responding to calls for service as outlined by local, state, and federal law.</li>
@@ -201,13 +186,12 @@
                 <li>Executed search warrants and participated in raids, ensuring adherence to legal protocols and safety procedures.</li>
                 <li>Apprehended and transported criminal suspects, provided courtroom testimony through self-documented incident reports.</li>
             </ul>
-            <button class="copy-button" onclick="copyToClipboard('job1-responsibilities')">Copy Responsibilities</button>
+            <button class="copy-button" onclick="copyToClipboard('job1-responsibilities', this)" aria-label="Copy Responsibilities">Copy Responsibilities</button>
         </div>
 
         <p><strong>Additional Work History: Available Upon Request</strong></p>
     </div>
 
-    <!-- Professional Impact Metrics -->
     <div class="section">
         <h2>Professional Impact Metrics:</h2>
         <div class="content-box" id="impact-metrics">
@@ -221,7 +205,7 @@
                 <li>(2019): Established, led, and was a member of command level incidents throughout Nashville, TN as a police officer.</li>
                 <li>(2018): Rescue Task Force (RTF) certification to serve against acts of deadly aggression with Metro Nashville Police Department. </li>
             </ul>
-            <button class="copy-button" onclick="copyToClipboard('impact-metrics')">Copy Professional Impact Metrics</button>
+            <button class="copy-button" onclick="copyToClipboard('impact-metrics', this)" aria-label="Copy Professional Impact Metrics">Copy Professional Impact Metrics</button>
         </div>
     </div>
 
@@ -259,14 +243,13 @@
                 <li>★★★☆☆ Project Libre</li>
                 <li>★★☆☆☆ Ethical Hacking</li>
             </ul>
-            <button class="copy-button" onclick="copyToClipboard('skills')">Copy Skills</button>
+            <button class="copy-button" onclick="copyToClipboard('skills', this)" aria-label="Copy Skills">Copy Skills</button>
         </div>
     </div>
 
     <div class="section">
         <h2>Education:</h2>
         
-    <!-- University 4 -->
     <div class="content-box" id="education4">
         <div class="education-info">
                 <span class="edu-name" id="edu4-name">Middle Tennessee State University</span>
@@ -274,16 +257,15 @@
                 <span class="edu-degree" id="edu4-degree">MAcc, Accounting</span>
                 <span class="edu-dates" id="edu4-dates">01/2025 - XX/2026</span>
                 <span class="edu-gpa" id="edu4-gpa">X.XX GPA, XXXXX</span>
-                <button class="copy-button" onclick="copyToClipboard('edu4-name')">Copy University</button>
-                <button class="copy-button" onclick="copyToClipboard('edu4-location')">Copy Location</button>
-                <button class="copy-button" onclick="copyToClipboard('edu4-degree')">Copy Degree</button>
-                <button class="copy-button" onclick="copyDatePart('edu4-dates', 1)">Copy Date 1</button>
-                <button class="copy-button" onclick="copyDatePart('edu4-dates', 2)">Copy Date 2</button>
-                <button class="copy-button" onclick="copyToClipboard('edu4-gpa')">Copy GPA</button>
+                <button class="copy-button" onclick="copyToClipboard('edu4-name', this)" aria-label="Copy University Name">Copy University</button>
+                <button class="copy-button" onclick="copyToClipboard('edu4-location', this)" aria-label="Copy Location">Copy Location</button>
+                <button class="copy-button" onclick="copyToClipboard('edu4-degree', this)" aria-label="Copy Degree">Copy Degree</button>
+                <button class="copy-button" onclick="copyDatePart('edu4-dates', 1, this)" aria-label="Copy Start Date">Copy Date 1</button>
+                <button class="copy-button" onclick="copyDatePart('edu4-dates', 2, this)" aria-label="Copy End Date">Copy Date 2</button>
+                <button class="copy-button" onclick="copyToClipboard('edu4-gpa', this)" aria-label="Copy GPA">Copy GPA</button>
             </div>
         </div>
 
-    <!-- University 3 -->
     <div class="content-box" id="education3">
         <div class="education-info">
             <span class="edu-name" id="edu3-name">Middle Tennessee State University</span>
@@ -291,16 +273,15 @@
             <span class="edu-degree" id="edu3-degree">MBA, Business Administration</span>
             <span class="edu-dates" id="edu3-dates">08/2021 - 05/2023</span>
             <span class="edu-gpa" id="edu3-gpa">4.0 GPA, Summa Cum Laude</span>
-            <button class="copy-button" onclick="copyToClipboard('edu3-name')">Copy University</button>
-            <button class="copy-button" onclick="copyToClipboard('edu3-location')">Copy Location</button>
-            <button class="copy-button" onclick="copyToClipboard('edu3-degree')">Copy Degree</button>
-            <button class="copy-button" onclick="copyDatePart('edu3-dates', 1)">Copy Date 1</button>
-            <button class="copy-button" onclick="copyDatePart('edu3-dates', 2)">Copy Date 2</button>
-            <button class="copy-button" onclick="copyToClipboard('edu3-gpa')">Copy GPA</button>
+            <button class="copy-button" onclick="copyToClipboard('edu3-name', this)" aria-label="Copy University Name">Copy University</button>
+            <button class="copy-button" onclick="copyToClipboard('edu3-location', this)" aria-label="Copy Location">Copy Location</button>
+            <button class="copy-button" onclick="copyToClipboard('edu3-degree', this)" aria-label="Copy Degree">Copy Degree</button>
+            <button class="copy-button" onclick="copyDatePart('edu3-dates', 1, this)" aria-label="Copy Start Date">Copy Date 1</button>
+            <button class="copy-button" onclick="copyDatePart('edu3-dates', 2, this)" aria-label="Copy End Date">Copy Date 2</button>
+            <button class="copy-button" onclick="copyToClipboard('edu3-gpa', this)" aria-label="Copy GPA">Copy GPA</button>
         </div>
     </div>
         
-    <!-- University 2 -->
     <div class="content-box" id="education2">
         <div class="education-info">
             <span class="edu-name" id="edu2-name">Middle Tennessee State University</span>
@@ -308,16 +289,15 @@
             <span class="edu-degree" id="edu2-degree">MBA, Healthcare Management</span>
             <span class="edu-dates" id="edu2-dates">08/2021 - 05/2023</span>
             <span class="edu-gpa" id="edu2-gpa">4.0 GPA, Summa Cum Laude</span>
-            <button class="copy-button" onclick="copyToClipboard('edu2-name')">Copy University</button>
-            <button class="copy-button" onclick="copyToClipboard('edu2-location')">Copy Location</button>
-            <button class="copy-button" onclick="copyToClipboard('edu2-degree')">Copy Degree</button>
-            <button class="copy-button" onclick="copyDatePart('edu2-dates', 1)">Copy Date 1</button>
-            <button class="copy-button" onclick="copyDatePart('edu2-dates', 2)">Copy Date 2</button>
-            <button class="copy-button" onclick="copyToClipboard('edu2-gpa')">Copy GPA</button>
+            <button class="copy-button" onclick="copyToClipboard('edu2-name', this)" aria-label="Copy University Name">Copy University</button>
+            <button class="copy-button" onclick="copyToClipboard('edu2-location', this)" aria-label="Copy Location">Copy Location</button>
+            <button class="copy-button" onclick="copyToClipboard('edu2-degree', this)" aria-label="Copy Degree">Copy Degree</button>
+            <button class="copy-button" onclick="copyDatePart('edu2-dates', 1, this)" aria-label="Copy Start Date">Copy Date 1</button>
+            <button class="copy-button" onclick="copyDatePart('edu2-dates', 2, this)" aria-label="Copy End Date">Copy Date 2</button>
+            <button class="copy-button" onclick="copyToClipboard('edu2-gpa', this)" aria-label="Copy GPA">Copy GPA</button>
         </div>
     </div>
 
-    <!-- University 1 -->
     <div class="content-box" id="education1">
         <div class="education-info">
             <span class="edu-name" id="edu1-name">Middle Tennessee State University</span>
@@ -325,17 +305,16 @@
             <span class="edu-degree" id="edu1-degree">BBA, Economics</span>
             <span class="edu-dates" id="edu1-dates">08/2014 - 05/2017</span>
             <span class="edu-gpa" id="edu1-gpa">3.85 GPA, Magna Cum Laude</span>
-            <button class="copy-button" onclick="copyToClipboard('edu1-name')">Copy University</button>
-            <button class="copy-button" onclick="copyToClipboard('edu1-location')">Copy Location</button>
-            <button class="copy-button" onclick="copyToClipboard('edu1-degree')">Copy Degree</button>
-            <button class="copy-button" onclick="copyDatePart('edu1-dates', 1)">Copy Date 1</button>
-            <button class="copy-button" onclick="copyDatePart('edu1-dates', 2)">Copy Date 2</button>
-            <button class="copy-button" onclick="copyToClipboard('edu1-gpa')">Copy GPA</button>
+            <button class="copy-button" onclick="copyToClipboard('edu1-name', this)" aria-label="Copy University Name">Copy University</button>
+            <button class="copy-button" onclick="copyToClipboard('edu1-location', this)" aria-label="Copy Location">Copy Location</button>
+            <button class="copy-button" onclick="copyToClipboard('edu1-degree', this)" aria-label="Copy Degree">Copy Degree</button>
+            <button class="copy-button" onclick="copyDatePart('edu1-dates', 1, this)" aria-label="Copy Start Date">Copy Date 1</button>
+            <button class="copy-button" onclick="copyDatePart('edu1-dates', 2, this)" aria-label="Copy End Date">Copy Date 2</button>
+            <button class="copy-button" onclick="copyToClipboard('edu1-gpa', this)" aria-label="Copy GPA">Copy GPA</button>
         </div>
     </div>
 </div>
 
-    <!-- Attachment Section -->
     <div class="Attachments">
         <h2>Attachments:</h2>
         <ul>
@@ -345,7 +324,6 @@
         </ul>
     </div>
 
-    <!-- Other Section -->
     <div class="Other">
         <h2>Other:</h2>
         <ul>
@@ -354,90 +332,86 @@
     </div>
     
 <script>
-    // General function to copy content from an element by ID
-    function copyToClipboard(id) {
-        var element = document.getElementById(id);
+    // Helper function to copy text to clipboard using modern Clipboard API
+    async function copyText(text, button) {
+        try {
+            await navigator.clipboard.writeText(text.trim());
+            if (button) {
+                button.classList.add('copied');
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.classList.remove('copied');
+                    button.textContent = button.getAttribute('aria-label').replace('Copy ', '');
+                }, 2000);
+            }
+        } catch (err) {
+            console.error('Failed to copy text: ', err);
+        }
+    }
+
+    // Generate job categories dynamically
+    const jobCategories = {
+        title: Array.from({ length: 4 }, (_, i) => `job${i + 1}-title`),
+        employer: Array.from({ length: 4 }, (_, i) => `job${i + 1}-employer`),
+        location: Array.from({ length: 4 }, (_, i) => `job${i + 1}-location`),
+        dates: Array.from({ length: 4 }, (_, i) => `job${i + 1}-dates`),
+        responsibilities: Array.from({ length: 4 }, (_, i) => `job${i + 1}-responsibilities`)
+    };
+
+    // Function to copy content from an element by ID
+    async function copyToClipboard(id, button) {
+        const element = document.getElementById(id);
+        if (!element) {
+            console.error(`Element with ID ${id} not found`);
+            return;
+        }
+
         let textToCopy = '';
 
-        // Special handling for the "Summary" section
         if (id === 'summary') {
-            // Get the text content inside the #summary element (excluding the button)
-            textToCopy = element.querySelector('p').innerText;
-        } else if (id === 'impact-metrics') {
-            // Handle Professional Impact Metrics section with bullet points
+            textToCopy = element.querySelector('p')?.innerText || '';
+        } else if (id === 'impact-metrics' || id === 'skills') {
             const listItems = element.querySelectorAll('li');
-            listItems.forEach(function(item) {
-                textToCopy += '• ' + item.innerText + '\n'; // Add bullet point before each item
-            });
-        } else if (id === 'skills') {
-            // Handle skills with bullet points
+            textToCopy = Array.from(listItems).map(item => `• ${item.innerText}`).join('\n');
+        } else if (jobCategories.title.includes(id) || jobCategories.employer.includes(id) || 
+                   jobCategories.location.includes(id) || jobCategories.dates.includes(id)) {
+            textToCopy = element.innerText;
+        } else if (jobCategories.responsibilities.includes(id)) {
             const listItems = element.querySelectorAll('li');
-            listItems.forEach(function(item) {
-                textToCopy += '• ' + item.innerText + '\n';
-            });
-        } else if (id === 'job1-title' || id === 'job1-employer' || id === 'job1-location' || id === 'job1-dates') {
-            // Handle specific job 1 data copy (title, employer, location, or dates)
-            textToCopy = element.innerText;
-        } else if (id === 'job2-title' || id === 'job2-employer' || id === 'job2-location' || id === 'job2-dates') {
-            // Handle specific job 2 data copy (title, employer, location, or dates)
-            textToCopy = element.innerText;
-        } else if (id === 'job3-title' || id === 'job3-employer' || id === 'job3-location' || id === 'job3-dates') {
-            // Handle specific job 3 data copy (title, employer, location, or dates)
-            textToCopy = element.innerText;
-        } else if (id === 'job1-responsibilities' || id === 'job2-responsibilities' || id === 'job3-responsibilities') {
-            // Special handling for the "Job Responsibilities" section (bullet points for each line)
-            const listItems = element.querySelectorAll('li');
-            listItems.forEach(function(item) {
-                textToCopy += '• ' + item.innerText + '\n'; // Add bullet point before each responsibility
-            });
+            textToCopy = Array.from(listItems).map(item => `• ${item.innerText}`).join('\n');
         } else {
-            // Handle general copy behavior for other sections
             textToCopy = element.innerText;
         }
 
-        // Create a temporary textarea to use the document.execCommand() API
-        var tempTextArea = document.createElement('textarea');
-        tempTextArea.value = textToCopy.trim();
-        document.body.appendChild(tempTextArea);
-        tempTextArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempTextArea);
+        await copyText(textToCopy, button);
     }
 
     // Function to copy the date before or after the hyphen
-    function copyDatePart(id, part) {
-        var element = document.getElementById(id);
-        var dateText = element.innerText.trim();
+    async function copyDatePart(id, part, button) {
+        const element = document.getElementById(id);
+        if (!element) {
+            console.error(`Element with ID ${id} not found`);
+            return;
+        }
 
-        // Split the date string by the hyphen
-        var dates = dateText.split(' - ');
+        const dateText = element.innerText.trim();
+        const dates = dateText.split(' - ');
+        const textToCopy = part === 1 ? dates[0] : dates[1] || '';
 
-        // Check which part of the date to copy (1 for before hyphen, 2 for after)
-        var textToCopy = part === 1 ? dates[0] : dates[1];
+        await copyText(textToCopy,
 
-        // Create a temporary textarea to use the document.execCommand() API
-        var tempTextArea = document.createElement('textarea');
-        tempTextArea.value = textToCopy.trim();
-        document.body.appendChild(tempTextArea);
-        tempTextArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempTextArea);
+ button);
     }
 
-    // Add the functionality for copying the LinkedIn URL
-    document.getElementById('copyWebsiteLink').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the link from navigating
-        
-        // Get the URL from the data-link attribute
+    // Add functionality for copying the LinkedIn URL
+    document.getElementById('copyWebsiteLink').addEventListener('click', async function(event) {
+        event.preventDefault();
         const linkedInUrl = this.getAttribute('data-link');
-        
-        // Create a temporary textarea to use the document.execCommand() API
-        var tempTextArea = document.createElement('textarea');
-        tempTextArea.value = linkedInUrl.trim();
-        document.body.appendChild(tempTextArea);
-        tempTextArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempTextArea);
+        await copyText(linkedInUrl, this);
+        this.textContent = 'Copied!';
+        setTimeout(() => {
+            this.textContent = 'Copy LinkedIn URL';
+        }, 2000);
     });
 </script>
 </body>
