@@ -67,7 +67,7 @@
             display: inline-block;
             margin-right: 10px;
         }
-        .education-info span:not(: soprano) {
+        .education-info span:not(:last-child)::after {
             content: " |";
             margin-left: 5px;
         }
@@ -398,9 +398,7 @@
         const dates = dateText.split(' - ');
         const textToCopy = part === 1 ? dates[0] : dates[1] || '';
 
-        await copyText(textToCopy,
-
- button);
+        await copyText(textToCopy, button);
     }
 
     // Add functionality for copying the LinkedIn URL
