@@ -56,17 +56,8 @@
         .links a:hover {
             text-decoration: underline;
         }
-        #skills ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .education-info span {
-            display: inline-block;
-            margin-right: 10px;
-        }
-        .education-info span:not(:last-child)::after {
-            content: " |";
-            margin-left: 5px;
+        ul {
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -85,7 +76,7 @@
         <h2>Summary:</h2>
         <div class="content-box" id="summary">
             <p>Operations & compliance professional with dual MBAs (4.0 GPA, Summa Cum Laude) and a Master of Accountancy in progress. Proven record of reducing cost, automating workflows, and translating regulatory requirements into scalable business processes across healthcare, pharmaceutical distribution, and public safety sectors.</p>
-            <button class="copy-button" onclick="copyToClipboard('summary', this)" aria-label="Copy Summary">Copy Summary</button>
+            <button class="copy-button" onclick="copyToClipboard('summary', this)">Copy Summary</button>
         </div>
     </div>
 
@@ -306,7 +297,7 @@
                 button.textContent = 'Copied!';
                 setTimeout(() => {
                     button.classList.remove('copied');
-                    button.textContent = button.getAttribute('aria-label') ? button.getAttribute('aria-label').replace('Copy ', '') : 'Copy';
+                    button.textContent = button.getAttribute('aria-label')?.replace('Copy ', '') || 'Copy';
                 }, 2000);
             }
         } catch (err) {
@@ -317,7 +308,22 @@
     async function copyToClipboard(id, button) {
         const element = document.getElementById(id);
         if (!element) return;
-        let textToCopy = element.innerText.replace(/Copy.*$/i, '').trim();
+
+        let textToCopy = '';
+
+        if (id === 'summary') {
+            textToCopy = element.querySelector('p')?.innerText || '';
+        } else if (id === 'impact-metrics' || id === 'skills') {
+            // Skills and Impact Metrics now both get bullet points
+            const listItems = element.querySelectorAll('li');
+            textToCopy = Array.from(listItems).map(item => `• ${item.innerText}`).join('\n');
+        } else if (id.includes('responsibilities')) {
+            const listItems = element.querySelectorAll('li');
+            textToCopy = Array.from(listItems).map(item => `• ${item.innerText}`).join('\n');
+        } else {
+            textToCopy = element.innerText.replace(/Copy.*$/i, '').trim();
+        }
+
         await copyText(textToCopy, button);
     }
 
@@ -329,7 +335,7 @@
         await copyText(text, button);
     }
 
-    // Fixed copy links
+    // Copy URL buttons
     document.getElementById('copyLinkedIn').addEventListener('click', async function(e) {
         e.preventDefault();
         await copyText(this.getAttribute('data-link'), this);
