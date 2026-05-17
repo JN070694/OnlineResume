@@ -37,15 +37,17 @@
             border: 1px solid #ddd;
             padding: 10px;
             background-color: #fff;
+            margin-bottom: 15px;
         }
         .job-info, .education-info {
             margin-bottom: 10px;
         }
-        .job-info span {
+        .job-info span, .education-info span {
             display: inline-block;
             margin-right: 10px;
         }
-        .job-info span:not(:last-child)::after {
+        .job-info span:not(:last-child)::after,
+        .education-info span:not(:last-child)::after {
             content: " |";
             margin-left: 5px;
         }
@@ -82,7 +84,7 @@
 
     <div class="section">
         <h2>Work Experience:</h2>
-
+        <!-- Job 4 -->
         <div class="content-box" id="job4">
             <div class="job-info">
                 <span class="job-title" id="job4-title">Teaching Assistant — Accounting</span>
@@ -104,6 +106,7 @@
             <button class="copy-button" onclick="copyToClipboard('job4-responsibilities', this)">Copy Responsibilities</button>
         </div>
 
+        <!-- Job 3, Job 2, Job 1 ... (same as before) -->
         <div class="content-box" id="job3">
             <div class="job-info">
                 <span class="job-title" id="job3-title">Sr. DSCSA Consultant</span>
@@ -301,7 +304,7 @@
                 }, 2000);
             }
         } catch (err) {
-            console.error('Failed to copy text: ', err);
+            console.error('Failed to copy');
         }
     }
 
@@ -313,11 +316,7 @@
 
         if (id === 'summary') {
             textToCopy = element.querySelector('p')?.innerText || '';
-        } else if (id === 'impact-metrics' || id === 'skills') {
-            // Skills and Impact Metrics now both get bullet points
-            const listItems = element.querySelectorAll('li');
-            textToCopy = Array.from(listItems).map(item => `• ${item.innerText}`).join('\n');
-        } else if (id.includes('responsibilities')) {
+        } else if (id === 'impact-metrics' || id === 'skills' || id.includes('responsibilities')) {
             const listItems = element.querySelectorAll('li');
             textToCopy = Array.from(listItems).map(item => `• ${item.innerText}`).join('\n');
         } else {
@@ -335,7 +334,6 @@
         await copyText(text, button);
     }
 
-    // Copy URL buttons
     document.getElementById('copyLinkedIn').addEventListener('click', async function(e) {
         e.preventDefault();
         await copyText(this.getAttribute('data-link'), this);
