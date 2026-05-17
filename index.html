@@ -39,9 +39,6 @@
             background-color: #fff;
             margin-bottom: 15px;
         }
-        .job-info, .education-info {
-            margin-bottom: 10px;
-        }
         .job-info span, .education-info span {
             display: inline-block;
             margin-right: 10px;
@@ -84,7 +81,7 @@
 
     <div class="section">
         <h2>Work Experience:</h2>
-        <!-- Job 4 -->
+
         <div class="content-box" id="job4">
             <div class="job-info">
                 <span class="job-title" id="job4-title">Teaching Assistant — Accounting</span>
@@ -106,7 +103,6 @@
             <button class="copy-button" onclick="copyToClipboard('job4-responsibilities', this)">Copy Responsibilities</button>
         </div>
 
-        <!-- Job 3, Job 2, Job 1 ... (same as before) -->
         <div class="content-box" id="job3">
             <div class="job-info">
                 <span class="job-title" id="job3-title">Sr. DSCSA Consultant</span>
@@ -295,14 +291,17 @@
     async function copyText(text, button) {
         try {
             await navigator.clipboard.writeText(text.trim());
-            if (button) {
-                button.classList.add('copied');
-                button.textContent = 'Copied!';
-                setTimeout(() => {
-                    button.classList.remove('copied');
-                    button.textContent = button.getAttribute('aria-label')?.replace('Copy ', '') || 'Copy';
-                }, 2000);
-            }
+            
+            const originalText = button.textContent;
+            button.dataset.originalText = originalText;   // Save original text
+            
+            button.classList.add('copied');
+            button.textContent = 'Copied!';
+            
+            setTimeout(() => {
+                button.classList.remove('copied');
+                button.textContent = originalText;   // Restore original text
+            }, 2000);
         } catch (err) {
             console.error('Failed to copy');
         }
@@ -334,6 +333,7 @@
         await copyText(text, button);
     }
 
+    // URL Copy Buttons
     document.getElementById('copyLinkedIn').addEventListener('click', async function(e) {
         e.preventDefault();
         await copyText(this.getAttribute('data-link'), this);
